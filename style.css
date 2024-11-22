@@ -1,0 +1,85 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow if image exceeds viewport */
+  }
+  
+  .image-container {
+    display: flex; /* Center the image horizontally */
+    justify-content: center;
+    overflow: hidden; /* Hide the parts outside the 60% focus */
+    transform: scale(1.5);
+}
+
+.frame {
+    position: absolute;
+    z-index: 1;
+    width: 55%;
+    height: 55%;
+    top: 22%;
+    opacity: 50%;
+    border: 2px solid white;
+    border-radius: 20%;
+    -webkit-animation: pulsate 15s ease-in;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes pulsate {
+    0% {
+        width: 25%;
+        height: 25%;
+        top: 35%;
+        border-radius: 20%;
+    }
+    16.67% {
+        width: 40%;
+        height: 40%;
+        top: 28%;
+        border-radius: 20%;
+    }
+    33.33% {
+        width: 55%;
+        height: 55%;
+        top: 22%;
+        border-radius: 50%;
+    }
+    50% {
+        width: 55%;
+        height: 55%;
+        top: 22%;
+        border-radius: 50%;
+    }
+    66.67% {
+        width: 40%;
+        height: 40%;
+        top: 28%;
+        border-radius: 20%;
+    }
+    83.33% {
+        width: 25%;
+        height: 25%;
+        top: 35%;
+        border-radius: 20%;
+    }
+    100% {
+        width: 25%;
+        height: 25%;
+        top: 35%;
+        border-radius: 20%;
+    }
+}
+
+
+
+
+
+.focused-image {
+    width: 100%; /* Ensure it spans the parent's width */
+    max-width: none; /* Prevent it from shrinking unnecessarily */
+    object-fit: cover; /* Maintain focus inside the visible portion */
+    clip-path: inset(0 20% 0 20%); /* Show only the inner 60% width */
+}
+  
