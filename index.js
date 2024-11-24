@@ -2,6 +2,8 @@ $(document).ready(function () {
     const $slider = $('#animation-slider');
     const $label = $('#slider-label');
     const $frame = $('.frame');
+    const $imageContainer = $('.image-container');
+    const $banner = $('#banner')
   
     // Update animation-duration based on slider value
     $slider.on('input', function () {
@@ -14,20 +16,25 @@ $(document).ready(function () {
     $frame.css('animation-duration', `${$slider.val()}s`);
 
   let timeout;
-  const greyOutSlider = () => {
+  const greyOutExtras = () => {
     $slider.css('opacity', 0.1);
     $label.css('opacity', 0.1);
+    $banner.css('opacity', 0.1);
   };
 
-  const restoreSlider = () => {
+  const restoreExtras = () => {
     clearTimeout(timeout);
     $slider.css('opacity', 1);
     $label.css('opacity', 1);
-    timeout = setTimeout(greyOutSlider, 2000);
+    $banner.css('opacity', 1);
+    timeout = setTimeout(greyOutExtras
+, 2000);
   };
 
-  $slider.on('mouseover input', restoreSlider);
+  $slider.on('mouseover input', restoreExtras);
+  $imageContainer.on('mouseover', restoreExtras);
+  $banner.on('mouseover', restoreExtras);
 
-  timeout = setTimeout(greyOutSlider, 2000);
+  timeout = setTimeout(greyOutExtras, 2000);
   });
   

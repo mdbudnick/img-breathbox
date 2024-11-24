@@ -7,9 +7,15 @@ html, body {
     overflow: hidden; /* Hide overflow if image exceeds viewport */
 }
 
+#banner {
+    display: block;
+    width: auto;
+    transition: opacity 1s ease;
+}
+
 .image-container {
     position: relative;
-    margin: 15% 25% 0 25%;
+    margin: 2px 25% 0 25%;
 }
 
 .focused-image {
@@ -31,7 +37,7 @@ html, body {
     animation-name: pulsate;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
-  }
+}
 
 #animation-slider {
     display: block;
