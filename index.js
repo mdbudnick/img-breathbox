@@ -31,6 +31,8 @@ $(document).ready(function () {
 , 2000);
   };
 
+  $slider.val(15);
+
   $slider.on('mouseover input', restoreExtras);
   $imageContainer.on('mouseover', restoreExtras);
   $banner.on('mouseover', restoreExtras);
