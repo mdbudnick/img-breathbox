@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Hide overflow if image exceeds viewport */
@@ -8,7 +9,7 @@ html, body {
 
 .image-container {
     position: relative;
-    margin: 25%;
+    margin: 15% 25% 0 25%;
 }
 
 .focused-image {
@@ -31,6 +32,11 @@ html, body {
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
   }
+
+#animation-slider {
+    display: block;
+    width: auto;
+}
 
   @keyframes pulsate {
     0% {
